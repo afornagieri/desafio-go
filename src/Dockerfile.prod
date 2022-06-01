@@ -1,0 +1,15 @@
+FROM golang:latest as builder
+
+WORKDIR user/src/app
+
+COPY ./app/hello.go .
+
+RUN go build hello.go
+
+FROM scratch
+
+WORKDIR /app
+
+COPY --from=builder /go/user/src/app .
+
+ENTRYPOINT [ "./hello" ]
