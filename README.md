@@ -1,2 +1,5 @@
-# desafio-go
-Docker
+## Running
+
+```
+docker pull afornagieri/go-challenge1:tagname
+```
